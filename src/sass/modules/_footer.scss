@@ -1,0 +1,5 @@
+.mainFooter{
+    height: 100vh;
+    background-color: global("primaryColor");
+    @extend %flexCenter;
+}

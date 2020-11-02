@@ -1,0 +1,11 @@
+.pokemon{
+    @extend %flexCenter;
+
+    &__title{
+        margin: 1em;
+    }
+
+    &:nth-of-type(even){
+        background-color: global("secondaryColor");
+    }
+}

@@ -5,7 +5,6 @@ var connect = require("gulp-connect");
 var babel = require("gulp-babel");
 var sourcemap = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
-var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 
 function processHTML() {
@@ -22,7 +21,6 @@ function processJS() {
 		}))
         .pipe(concat("app.js"))
         .pipe(sourcemap.write("."))
-		.pipe(uglify())
 		.pipe(gulp.dest("dist/assets/js/"))
 		.pipe(connect.reload());
 }

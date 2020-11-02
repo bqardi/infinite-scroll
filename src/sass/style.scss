@@ -3,6 +3,9 @@
 @import "mixins";
 @import "snippets";
 @import "placeholders";
+@import "modules/header";
+@import "modules/pokemon";
+@import "modules/footer";
 
 body{
     margin: 0;
