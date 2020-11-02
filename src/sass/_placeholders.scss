@@ -1,0 +1,60 @@
+%flexCenter{
+    @extend %flexCenterHorizontal;
+    align-items: center;
+}
+%flexCenterHorizontal{
+    display: flex;
+    justify-content: center;
+}
+%flexCenterVertical{
+    display: flex;
+    align-items: center;
+}
+
+%marginAuto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%posFullAbsolute{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+%posFullFixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+%fadeIn{
+    visibility: visible;
+    opacity: 1;
+}
+%fadeOut{
+    $duration: global("transitionDuration");
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility $duration, opacity $duration;
+}
+
+%listStyleNone {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+%cover{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+%contain{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

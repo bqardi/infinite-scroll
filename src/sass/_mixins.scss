@@ -1,0 +1,59 @@
+@mixin gridFlexible($minWidth, $gap){
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($minWidth, 1fr));
+    gap: $gap;
+}
+
+@mixin shadow($distance, $color: shadowOpacity(1 / ($distance / 2))){
+    box-shadow: $distance $distance $distance * 2 0 $color;
+}
+
+@mixin pseudo($placement: after, $display: block, $pos: absolute, $content: ""){
+    &::#{$placement}{
+        content: $content;
+        display: $display;
+        position: $pos;
+        @content;
+    }
+}
+
+@mixin round($size){
+    display: block;
+    box-sizing: border-box;
+    @include box($size);
+    border-radius: 50%;
+    @extend %flexCenter;
+}
+
+@mixin readMore($maxWidth, $overflow: hidden) {
+    max-width: $maxWidth;
+    overflow: $overflow;
+    white-space: if($overflow == hidden, nowrap, normal);
+    text-overflow: if($overflow == hidden, ellipsis, clip);
+}
+
+@mixin media($breakpoint, $type: min) {
+    @if map_has_key($breakpoints, $breakpoint) {
+        $breakpoint: map_get($breakpoints, $breakpoint);
+        @if $type == max {
+            $breakpoint: $breakpoint - 1px;
+        }
+        @media only screen and (#{$type}-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin backgroundImage($url, $contain: false){
+    background-image: url($url);
+    @if $contain{
+        @extend %contain;
+    }@else{
+        @extend %cover;
+    }
+}
+
+@mixin box($width, $height:$width){
+    width: $width;
+    height: $height;
+}

@@ -1,0 +1,17 @@
+@function global($key){
+    @if map-has-key($globals, $key) {
+        @return map-get($globals, $key);
+    }
+    
+    @warn "The key #{$key} is not in the map $globals. Available keys: #{$globals}";
+    @return null;
+}
+@function clamp($min, $value, $max){
+    @return if($value > $max, $max, if($value < $min, $min, $value));
+}
+@function shadowOpacity($opacity){
+    @return rgba(0, 0, 0, clamp(0, $opacity, 1));
+}
+@function contrast($color, $amount: 5){
+    @return if(lightness($color) > 50%, darken($color, $amount), lighten($color, $amount));
+}
