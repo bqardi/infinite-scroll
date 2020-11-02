@@ -1,0 +1,9 @@
+.mainHeader{
+    height: 100vh;
+    background-color: global("primaryColor");
+    @extend %flexCenter;
+    
+    &__title{
+        margin: 0;
+    }
+}

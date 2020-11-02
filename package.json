@@ -7,7 +7,15 @@
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["infinite","scroll","javascript","intersection","observer","pokemon","api"],
+  "keywords": [
+    "infinite",
+    "scroll",
+    "javascript",
+    "intersection",
+    "observer",
+    "pokemon",
+    "api"
+  ],
   "author": "Sune Seifert <bqardi@msn.com>",
   "license": "MIT",
   "dependencies": {
