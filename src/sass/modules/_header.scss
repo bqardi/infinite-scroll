@@ -1,5 +1,6 @@
 .mainHeader{
     height: 100vh;
+    margin-bottom: 10px;
     background-color: global("primaryColor");
     @extend %flexCenter;
     

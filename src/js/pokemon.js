@@ -8,7 +8,7 @@ function createPokemon(name){
     
     var image = document.createElement("img");
     image.classList.add("pokemon__image");
-    image.src = "./assets/images/pokeball.png";
+    image.src = "./assets/images/resized/pokeball.png";
     image.alt = name;
 
     pokemon.appendChild(title);

@@ -11,7 +11,11 @@ function loadPokemons(url){
             root.appendChild(element);
             observe(element, function(){
                 getData(pokemon.url, function(imgData){
-                    element.querySelector("img").src = imgData.sprites.front_default;
+                    if (imgData.sprites.front_default) {
+                        element.querySelector("img").src = imgData.sprites.front_default;
+                    } else {
+                        element.querySelector("img").src = "./assets/images/resized/no-image.png";
+                    }
                 });
                 if (index === results.length - 1) {
                     if (!data.next) {
@@ -20,7 +24,7 @@ function loadPokemons(url){
                     loadPokemons(data.next);
                 }
             });
-            counterElement.textContent = `Pokémons: ${++counter}`;
+            counterElement.textContent = `Pokémons loaded: ${++counter}`;
         });
     });
 }
