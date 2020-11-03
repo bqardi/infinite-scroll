@@ -1,11 +1,21 @@
+.pokemons{
+    display: grid;
+    @include gridFlexible(320px);
+    overflow: hidden;
+    max-width: 1500px;
+    @extend %marginAuto;
+}
 .pokemon{
     @extend %flexCenter;
 
     &__title{
         margin: 1em;
+        min-width: 100%;
+        font-size: 1.3em;
+        @extend %flexCenter;
     }
 
-    &:nth-of-type(even){
+    &:hover{
         background-color: global("secondaryColor");
     }
 }

@@ -1,4 +1,4 @@
-@mixin gridFlexible($minWidth, $gap){
+@mixin gridFlexible($minWidth, $gap: 0){
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax($minWidth, 1fr));
     gap: $gap;
