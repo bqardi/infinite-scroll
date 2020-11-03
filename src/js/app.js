@@ -1,5 +1,6 @@
 var root = document.getElementById("root");
-var offset = 0;
+var counterElement = document.querySelector(".counter");
+var counter = 0;
 
 loadPokemons(`https://pokeapi.co/api/v2/pokemon?limit=10`);
 
@@ -13,10 +14,10 @@ function loadPokemons(url){
                     if (!data.next) {
                         return;
                     }
-                    offset += 10;
                     loadPokemons(data.next);
                 });
             }
+            counterElement.textContent = `Pokémons: ${++counter}`;
         });
     });
 }
