@@ -6,6 +6,7 @@ var babel = require("gulp-babel");
 var sourcemap = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var imagemin = require("gulp-imagemin");
+var imageResize = require("gulp-image-resize");
 
 function processHTML() {
 	return gulp.src("src/html/**/*.html")
@@ -52,7 +53,7 @@ function processImages() {
 function processResizeImages() {
 	return gulp.src(["src/images/resized/**/*.*", "!src/images/resized/**/thumb.db"])
 		.pipe(imageResize({
-			width : 500,
+			width : 180,
 			crop : false,
 			upscale : false
 		}))
