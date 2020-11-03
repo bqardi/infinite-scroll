@@ -9,14 +9,17 @@ function loadPokemons(url){
         data.results.forEach((pokemon, index, results) => {
             let element = createPokemon(pokemon.name);
             root.appendChild(element);
-            if (index === results.length - 1) {
-                observe(element, function(){
+            observe(element, function(){
+                getData(pokemon.url, function(imgData){
+                    element.querySelector("img").src = imgData.sprites.front_default;
+                });
+                if (index === results.length - 1) {
                     if (!data.next) {
                         return;
                     }
                     loadPokemons(data.next);
-                });
-            }
+                }
+            });
             counterElement.textContent = `Pokémons: ${++counter}`;
         });
     });
