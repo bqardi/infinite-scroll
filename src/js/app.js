@@ -10,10 +10,10 @@ function loadPokemons(url){
             root.appendChild(element);
             if (index === results.length - 1) {
                 observe(element, function(){
-                    offset += 10;
                     if (!data.next) {
                         return;
                     }
+                    offset += 10;
                     loadPokemons(data.next);
                 });
             }
