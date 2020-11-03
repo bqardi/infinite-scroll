@@ -1,18 +1,26 @@
 .pokemons{
     display: grid;
-    @include gridFlexible(320px);
-    overflow: hidden;
+    @include gridFlexible(240px);
     max-width: 1500px;
     @extend %marginAuto;
 }
 .pokemon{
+    position: relative;
     @extend %flexCenter;
+    height: 240px;
 
     &__title{
-        margin: 1em;
-        min-width: 100%;
+        @extend %posFullAbsolute;
         font-size: 1.3em;
-        @extend %flexCenter;
+        @extend %flexCenterHorizontal;
+        align-items: flex-end;
+        color: white;
+        text-shadow: 0 0 5px black;
+    }
+    &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     &:hover{
